@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--<meta http-equiv="refresh" content="10">-->
+    <title>Administration Page</title>
+    <link href="../stylesheets/styles.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="padding-all">
+
+    <div class="header">
+      <h1><img src="../images/5.jpg" alt=" "> Administration page  <img src="../images/5.jpg"></h1>
+    </div>
+    
+    
+
+     <section class="get" style="
+                color: white;
+                background-color: rgba(195, 88,	132, 0.6);
+                padding: 16px 50px;
+                border-radius: 20px;
+                margin: 0 auto;
+                border: solid 2px;
+                cursor: pointer;
+                width: auto;
+                max-width: 200px;
+                position:center;
+                margin-top: 50px;
+
+            ">
+        <h3>Current Users Registered on the Database</h3>
+        <a href="/">Home</a>
+        
+        <div>
+        <a href="/get-data">LOAD DATA</a>
+            {{# each items }}
+                <article class="item">
+                    <div>Username: {{ this.username }}</div>
+                    <div>Email: {{ this.email }}</div>
+                    <div>Password: {{ this.password }}</div>
+                    <div>ID: {{ this._id }}</div>
+                </article>
+            {{/each}}
+    </div>
+	
+</section>
+
+<section class="delete">
+    <h3>Delete a User </h3>
+    <form action="/delete" method="post">
+    
+        <div class="input">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <button type="submit">DELETE</button>
+        
+    </form>
+</section>    
+    
+	<div class="footer">
+        <p>2020 Cloud Camera Server by Neil Morrison and Stephen McIntyre</p>
+    </div>
+</body>
+
+</html>

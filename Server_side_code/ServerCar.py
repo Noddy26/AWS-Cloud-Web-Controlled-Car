@@ -71,4 +71,4 @@ def static_page():
     return render_template('hi.html')
 
 if __name__ == "__main__":
-    app.run(debug=True, host="192.168.1.11", port=8080)
+    app.run(debug=True, host="your ip", port=8080)

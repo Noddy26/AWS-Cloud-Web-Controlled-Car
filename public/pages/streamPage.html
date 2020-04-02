@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="../stylesheets/main_styles.css" rel="stylesheet" type="text/css" media="all" />
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+
+
+
+<div class="grid-container">
+   <div class="grid-item">
+    <p style="color:white;">Move The Car</p>
+    <button onclick="forward()">Forward </button><br>
+    <button onclick="moveleft()">LEFT</button>
+    <button onclick="moveright()">RIGHT</button><br>
+    <button onclick="backward()">Backward</button><br><br><br>
+    <button onclick="left_light_on()">LeftLight ON</button><br>
+    <button onclick="left_light_off()">LeftLight OFF</button>
+   </div>
+  <div class="grid-item">
+	<div style="margin-left:5%;width:90%;margin-right:5%;" >
+  <iframe width="720" height="430"
+      src="http://95.44.225.20:2006/">
+ 	</iframe>
+	</div>
+  </div>
+   <div class="grid-item">
+	 <div class="wave-text-box" >
+		<p style="color:white;">Move The Camera </p>
+		<button onclick="up()">Up</button><br>
+		<button onclick="left()">LEFT</button>
+		<button onclick="right()">RIGHT</button><br>
+		<button onclick="down()">Down</button><br><br><br>
+    <button onclick="right_light_on()">RightLight ON</button><br>
+    <button onclick="right_light_off()">RightLight OFF</button>
+	</div>
+  </div>
+</div>
+ <form action="/#" method="get">
+        <input class="submitButton4" type="submit" name="button" value="Logout" style="
+                color: white;
+                background-color: rgba(195, 88,	132, 0.6);
+                padding: 16px 50px;
+                border-radius: 20px;
+                margin: 0 auto;
+                border: solid 2px;
+                cursor: pointer;
+                width: auto;
+                max-width: 200px;
+                position:center;
+                margin-top: 50px;
+
+            ">
+    </form>
+<div class="footer">
+        <p>2020 Cloud Camera Server by Neil Morrison and Stephen McIntyre</p>
+        <p id="demo"></p>
+    </div>
+<script>
+
+    var httpRequest;
+
+    function forward(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://95.44.225.20:2005/forward', true);
+        httpRequest.send();
+        httpRequest.onreadystatechange = (e) => {
+            console.log(Http.responseText)
+        }
+    }
+    function moveleft(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://ip of raspberry pi:2005/left', true);
+        httpRequest.send();
+    }
+    function moveright(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://ip of raspberry pi:2005/right', true);
+        httpRequest.send();
+    }
+    function backward(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://ip of raspberry pi:2005/backward', true);
+        httpRequest.send();
+    }
+    // code for the camera axis
+    function up(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://ip of raspberry pi:2005/up', true);
+        httpRequest.send();
+    }
+    function left(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://95.44.225.20:2005/LEFT', true);
+        httpRequest.send();
+    }
+    function right(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://ip of raspberry pi:2005/RIGHT', true);
+        httpRequest.send();
+    }
+    function down(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://ip of raspberry pi:2005/down', true);
+        httpRequest.send();
+    }
+    function left_light_on(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://ip of raspberry pi:2005/left_light_on', true);
+        httpRequest.send();
+    }
+    function left_light_off(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://ip of raspberry pi:2005/left_light_off', true);
+        httpRequest.send();
+    }
+    function right_light_on(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://ip of raspberry pi:2005/right_light_on', true);
+        httpRequest.send();
+    }
+    function right_light_off(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'http://ip of raspberry pi:2005/right_light_off', true);
+        httpRequest.send();
+    }
+</script>
+</body>
+</html>
